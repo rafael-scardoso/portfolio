@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafael Saraiva Cardoso — Portfólio</title>
+<meta name="description" content="Rafael Saraiva Cardoso — engenheiro mecânico em transição para desenvolvimento de sistemas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-row">
+    <p class="prompt-line">
+      <span class="prompt-user">rafael</span><span class="prompt-sym">@</span><span class="prompt-host">portfolio</span><span class="prompt-sym">:~$</span>
+      <span class="prompt-typed" id="promptTyped"></span><span class="cursor" aria-hidden="true"></span>
+    </p>
+    <div class="lang-switch" role="group" aria-label="Idioma / Language">
+      <button type="button" class="lang-btn" data-set-lang="pt" aria-pressed="true">pt</button>
+      <span class="lang-sep">/</span>
+      <button type="button" class="lang-btn" data-set-lang="en" aria-pressed="false">en</button>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Seções">
+    <a href="#hero"><span data-pt="início" data-en="home">início</span></a>
+    <a href="#about"><span data-pt="sobre" data-en="about">sobre</span></a>
+    <a href="#education"><span data-pt="formação" data-en="education">formação</span></a>
+    <a href="#experience"><span data-pt="experiência" data-en="experience">experiência</span></a>
+    <a href="#projects"><span data-pt="projetos" data-en="projects">projetos</span></a>
+    <a href="#contact"><span data-pt="contato" data-en="contact">contato</span></a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="hero" class="screen-section hero">
+    <div class="hero-text">
+      <h1 class="hero-name">Rafael Saraiva Cardoso</h1>
+      <p class="hero-role" data-pt="análise e desenvolvimento de sistemas" data-en="systems analysis and development">análise e desenvolvimento de sistemas</p>
+    </div>
+
+    <div class="transition-bar" aria-hidden="false">
+      <span class="transition-label" data-pt="engenharia mecânica" data-en="mechanical engineering">engenharia mecânica</span>
+      <div class="transition-track">
+        <div class="transition-fill" id="transitionFill"></div>
+      </div>
+      <span class="transition-label" data-pt="desenvolvimento" data-en="development">desenvolvimento</span>
+    </div>
+    <p class="transition-status" data-pt="carreira_em_migração — 10 anos de operações, agora compilando em código" data-en="career_in_migration — 10 years in operations, now compiling into code">carreira_em_migração — 10 anos de operações, agora compilando em código</p>
+
+    <ul class="fast-facts">
+      <li><span class="fact-key" data-pt="cidade" data-en="city">cidade</span><span class="fact-val">Canoas, RS</span></li>
+      <li><span class="fact-key" data-pt="foco" data-en="focus">foco</span><span class="fact-val" data-pt="estágio em TI" data-en="IT internship">estágio em TI</span></li>
+      <li><span class="fact-key" data-pt="stack" data-en="stack">stack</span><span class="fact-val">C, Java</span></li>
+    </ul>
+  </section>
+
+  <section id="about" class="screen-section block">
+    <h2><span data-pt="sobre" data-en="about">sobre</span></h2>
+    <p class="lede" data-pt="Rafael é engenheiro mecânico em transição de carreira para a tecnologia, unindo sua experiência em operações, liderança e resolução de problemas ao desenvolvimento de soluções digitais."
+       data-en="Rafael is a mechanical engineer transitioning into technology, combining his experience in operations, leadership, and problem-solving with the development of digital solutions.">
+      Rafael é engenheiro mecânico em transição de carreira para a tecnologia, unindo sua experiência em operações, liderança e resolução de problemas ao desenvolvimento de soluções digitais.
+    </p>
+  </section>
+
+  <section id="education" class="screen-section block">
+    <h2><span data-pt="formação acadêmica" data-en="education">formação acadêmica</span></h2>
+    <ol class="timeline">
+      <li class="timeline-item">
+        <span class="timeline-date" data-pt="prev. 12/28" data-en="exp. 12/28">prev. 12/28</span>
+        <div class="timeline-body">
+          <h3>Instituto Federal de Ciência e Tecnologia do Rio Grande do Sul (IFRS) — Canoas</h3>
+          <p data-pt="Tecnologia em Análise e Desenvolvimento de Sistemas" data-en="Associate Degree in Systems Analysis and Development">Tecnologia em Análise e Desenvolvimento de Sistemas</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date" data-pt="concluído 12/25" data-en="completed 12/25">concluído 12/25</span>
+        <div class="timeline-body">
+          <h3>Uniasselvi — Canoas</h3>
+          <p data-pt="Bacharelado em Engenharia Mecânica" data-en="Bachelor's Degree in Mechanical Engineering">Bacharelado em Engenharia Mecânica</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">02/2012 — 06/2016</span>
+        <div class="timeline-body">
+          <h3>Instituto Federal de Ciência e Tecnologia Sul-Riograndense (IFSul) — Sapucaia do Sul</h3>
+          <p data-pt="Bacharelado em Engenharia Mecânica" data-en="Bachelor's Degree in Mechanical Engineering">Bacharelado em Engenharia Mecânica</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="experience" class="screen-section block">
+    <div class="section-header-row">
+      <h2><span data-pt="experiência profissional" data-en="work experience">experiência profissional</span></h2>
+      <div class="scroll-controls" aria-label="Navegação do conteúdo">
+        <button type="button" class="scroll-btn" id="scrollUpBtn" aria-label="Rolar para cima">▲</button>
+        <button type="button" class="scroll-btn" id="scrollDownBtn" aria-label="Rolar para baixo">▼</button>
+      </div>
+    </div>
+
+    <div class="experience-container" id="expContainer">
+      <article class="job">
+        <div class="job-head">
+          <h3>F3DBR</h3>
+          <span class="job-date" data-pt="mai/2026 — jun/2026" data-en="May/2026 — Jun/2026">mai/2026 — jun/2026</span>
+        </div>
+        <p class="job-role" data-pt="Assistente técnico de processos" data-en="Technical Process Assistant">Assistente técnico de processos</p>
+        <ul>
+          <li data-pt="Atendimento a clientes via WhatsApp e marketplaces (Mercado Livre, Shopee), esclarecendo dúvidas técnicas e orientando sobre uso e manutenção do produto."
+              data-en="Provided customer support via WhatsApp and marketplaces (Mercado Livre, Shopee), clarifying technical questions and guiding customers on product use and maintenance.">Atendimento a clientes via WhatsApp e marketplaces (Mercado Livre, Shopee), esclarecendo dúvidas técnicas e orientando sobre uso e manutenção do produto.</li>
+          <li data-pt="Diagnóstico de falhas técnicas em impressoras 3D por meio de testes e análise de sintomas relatados pelo cliente."
+              data-en="Diagnosed technical failures in 3D printers through testing and analysis of symptoms reported by customers.">Diagnóstico de falhas técnicas em impressoras 3D por meio de testes e análise de sintomas relatados pelo cliente.</li>
+          <li data-pt="Registro e controle de solicitações de suporte técnico, documentando problema relatado, solução applieda e status do atendimento."
+              data-en="Logged and tracked technical support requests, documenting the reported issue, applied solution, and service status.">Registro e controle de solicitações de suporte técnico, documentando problema relatado, solução aplicada e status do atendimento.</li>
+          <li data-pt="Controle e teste de qualidade de matérias-primas utilizadas na produção."
+              data-en="Controlled and tested the quality of raw materials used in production.">Controle e teste de qualidade de matérias-primas utilizadas na produção.</li>
+          <li data-pt="Avaliação e conserto de impressoras 3D, priorizando casos com base em recorrência e urgência."
+              data-en="Evaluated and repaired 3D printers, prioritizing cases based on recurrence and urgency.">Avaliação e conserto de impressoras 3D, priorizando casos com base em recorrência e urgência.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Companhia Riograndense de Saneamento — Centro de Operações Integradas (COI)</h3>
+          <span class="job-date" data-pt="set/2023 — nov/2025" data-en="Sep/2023 — Nov/2025">set/2023 — nov/2025</span>
+        </div>
+        <p class="job-role" data-pt="Supervisor de CCO — Especialista de operações" data-en="CCO Supervisor — Operations Specialist">Supervisor de CCO — Especialista de operações</p>
+        <ul>
+          <li data-pt="Elaborou e entregou relatórios detalhados de desempenho de KPIs com indicadores operacionais para gestores e diretores, apoiando diretamente a tomada de decisão estratégica orientada a dados."
+              data-en="Prepared and delivered detailed KPI performance reports with operational indicators for managers and directors, directly supporting data-driven strategic decision-making.">Elaborou e entregou relatórios detalhados de desempenho de KPIs com indicadores operacionais para gestores e diretores, apoiando diretamente a tomada de decisão estratégica orientada a dados.</li>
+          <li data-pt="Monitorou continuamente conjuntos de dados operacionais de grande escala para detectar anomalias, identificar gargalos e implementar ações corretivas."
+              data-en="Continuously monitored large-scale operational datasets to detect anomalies, identify bottlenecks, and implement corrective actions.">Monitorou continuamente conjuntos de dados operacionais de grande escala para detectar anomalias, identificar gargalos e implementar ações corretivas.</li>
+          <li data-pt="Conduziu análises exploratórias de dados sobre métricas operacionais para identificar os principais fatores de ineficiência; documentou achados e comunicou recomendações acionáveis à liderança."
+              data-en="Conducted exploratory data analyses on operational metrics to identify key drivers of inefficiency; documented findings and communicated actionable recommendations to leadership.">Conduziu análises exploratórias de dados sobre métricas operacionais para identificar os principais fatores de ineficiência; documentou achados e comunicou recomendações acionáveis à liderança.</li>
+          <li data-pt="Liderou iniciativas de melhoria de processos avaliando novos sinais de dados de sistema, reduzindo perdas operacionais em redes de saneamento em nível estadual."
+              data-en="Led process improvement initiatives by evaluating new system data signals, reducing operational losses in statewide sanitation networks.">Liderou iniciativas de melhoria de processos avaliando novos sinais de dados de sistema, reduzindo perdas operacionais em redes de saneamento em nível estadual.</li>
+          <li data-pt="Supervisionou o desempenho da equipe e ministrou treinamentos, promovendo uma cultura de aprendizado contínuo e rigor analítico."
+              data-en="Oversaw team performance and delivered training, fostering a culture of continuous learning and analytical rigor.">Supervisionou o desempenho da equipe e ministrou treinamentos, promovendo uma cultura de aprendizado contínuo e rigor analítico.</li>
+          <li data-pt="Garantiu que todos os projetos seguissem cronogramas e padrões de conformidade estabelecidos, mantendo metas e SLAs."
+              data-en="Ensured all projects followed established schedules and compliance standards, maintaining goals and SLAs.">Garantiu que todos os projetos seguissem cronogramas e padrões de conformidade estabelecidos, mantendo metas e SLAs.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects" class="screen-section block">
+    <h2><span data-pt="projetos" data-en="projects">projetos</span></h2>
+    <div class="project-grid">
+
+      <article class="project-card">
+        <h3 data-pt="Detector de mensagens suspeitas" data-en="Suspicious Message Detector">Detector de mensagens suspeitas</h3>
+        <p data-pt="Programa em Java que verifica mensagens suspeitas a partir de texto puro, .txt e .eml."
+           data-en="A Java program that detects suspicious messages from plain text, .txt, and .eml files.">Programa em Java que verifica mensagens suspeitas a partir de texto puro, .txt e .eml.</p>
+        <span class="project-status" data-pt="repositório em breve" data-en="repository coming soon">repositório em breve</span>
+      </article>
+
+      <article class="project-card">
+        <h3 data-pt="Portfólio web" data-en="Web Portfolio">Portfólio web</h3>
+        <p data-pt="Este site — construído para praticar HTML e CSS do zero, sem frameworks."
+           data-en="This site — built to practice HTML and CSS from scratch, no frameworks.">Este site — construído para praticar HTML e CSS do zero, sem frameworks.</p>
+        <a class="project-link" href="https://github.com/rafael-scardoso" target="_blank" rel="noopener">github.com/rafael-scardoso</a>
+      </article>
+
+      <article class="project-card">
+        <h3 data-pt="TCC de engenharia — eficiência operacional em sistemas de bombeamento com controle PID"
+            data-en="Engineering capstone — operational efficiency in pumping systems with PID control">TCC de engenharia — eficiência operacional em sistemas de bombeamento com controle PID</h3>
+        <p data-pt="Estudo sobre o uso de controle PID na automação do bombeamento de água tratada em Capão da Canoa."
+           data-en="Study on the use of PID control in automating treated-water pumping in Capão da Canoa.">Estudo sobre o uso de controle PID na automação do bombeamento de água tratada em Capão da Canoa.</p>
+        <span class="project-status" data-pt="repositório em breve" data-en="repository coming soon">repositório em breve</span>
+      </article>
+
+      <article class="project-card">
+        <h3 data-pt="Impressão 3D — FDM" data-en="3D Printing — FDM">Impressão 3D — FDM</h3>
+        <p data-pt="Prototipagem rápida em manufatura aditiva de polímeros termoplásticos, operada como MEI."
+           data-en="Rapid prototyping through additive manufacturing of thermoplastic polymers, run as a registered microenterprise.">Prototipagem rápida em manufatura aditiva de polímeros termoplásticos, operada como MEI.</p>
+        <span class="project-status" data-pt="repositório em breve" data-en="repository coming soon">repositório em breve</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact" class="screen-section block contact-section">
+    <div class="contact-content">
+      <h2><span data-pt="contato" data-en="contact">contato</span></h2>
+      <ul class="contact-list">
+        <li>
+          <a href="https://github.com/rafael-scardoso" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.87-1.54-3.87-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+            <span>github.com/rafael-scardoso</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://br.linkedin.com/in/rafaelsaraivacardoso" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+            <span>linkedin.com/in/rafaelsaraivacardoso</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <footer class="site-footer">
+      <p><span class="prompt-sym">$</span> <span data-pt="processo encerrado com código 0" data-en="process exited with code 0">processo encerrado com código 0</span></p>
+    </footer>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
