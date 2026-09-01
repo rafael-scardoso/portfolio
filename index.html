@@ -15,22 +15,23 @@
 <header class="site-header">
   <div class="header-row">
     <p class="prompt-line">
+      <span class="status-dot" aria-hidden="true"></span>
       <span class="prompt-user">rafael</span><span class="prompt-sym">@</span><span class="prompt-host">portfolio</span><span class="prompt-sym">:~$</span>
       <span class="prompt-typed" id="promptTyped"></span><span class="cursor" aria-hidden="true"></span>
     </p>
     <div class="lang-switch" role="group" aria-label="Idioma / Language">
-      <button type="button" class="lang-btn" data-set-lang="pt" aria-pressed="true">pt</button>
+      <button type="button" class="lang-btn" data-set-lang="pt" aria-pressed="true">Pt</button>
       <span class="lang-sep">/</span>
-      <button type="button" class="lang-btn" data-set-lang="en" aria-pressed="false">en</button>
+      <button type="button" class="lang-btn" data-set-lang="en" aria-pressed="false">En</button>
     </div>
   </div>
   <nav class="site-nav" aria-label="Seções">
-    <a href="#hero"><span data-pt="início" data-en="home">início</span></a>
-    <a href="#about"><span data-pt="sobre" data-en="about">sobre</span></a>
-    <a href="#education"><span data-pt="formação" data-en="education">formação</span></a>
-    <a href="#experience"><span data-pt="experiência" data-en="experience">experiência</span></a>
-    <a href="#projects"><span data-pt="projetos" data-en="projects">projetos</span></a>
-    <a href="#contact"><span data-pt="contato" data-en="contact">contato</span></a>
+    <a href="#hero" class="nav-home"><span data-pt="Início" data-en="Home">Início</span></a>
+    <a href="#about"><span data-pt="Sobre" data-en="About">Sobre</span></a>
+    <a href="#education"><span data-pt="Formação" data-en="Education">Formação</span></a>
+    <a href="#experience"><span data-pt="Experiência" data-en="Experience">Experiência</span></a>
+    <a href="#projects"><span data-pt="Projetos" data-en="Projects">Projetos</span></a>
+    <a href="#contact"><span data-pt="Contato" data-en="Contact">Contato</span></a>
   </nav>
 </header>
 
@@ -40,6 +41,7 @@
     <div class="hero-text">
       <h1 class="hero-name">Rafael Saraiva Cardoso</h1>
       <p class="hero-role" data-pt="análise e desenvolvimento de sistemas" data-en="systems analysis and development">análise e desenvolvimento de sistemas</p>
+      <p class="hero-status"><span class="status-dot" aria-hidden="true"></span><span data-pt="disponível para estágio" data-en="available for internship">disponível para estágio</span></p>
     </div>
 
     <div class="transition-bar" aria-hidden="false">
@@ -49,7 +51,7 @@
       </div>
       <span class="transition-label" data-pt="desenvolvimento" data-en="development">desenvolvimento</span>
     </div>
-    <p class="transition-status" data-pt="carreira_em_migração — 10 anos de operações, agora compilando em código" data-en="career_in_migration — 10 years in operations, now compiling into code">carreira_em_migração — 10 anos de operações, agora compilando em código</p>
+    
 
     <ul class="fast-facts">
       <li><span class="fact-key" data-pt="cidade" data-en="city">cidade</span><span class="fact-val">Canoas, RS</span></li>
@@ -59,15 +61,18 @@
   </section>
 
   <section id="about" class="screen-section block">
-    <h2><span data-pt="sobre" data-en="about">sobre</span></h2>
+    <div class="section-box">
+    <h2><span data-pt="Sobre" data-en="About">Sobre</span></h2>
     <p class="lede" data-pt="Rafael é engenheiro mecânico em transição de carreira para a tecnologia, unindo sua experiência em operações, liderança e resolução de problemas ao desenvolvimento de soluções digitais."
        data-en="Rafael is a mechanical engineer transitioning into technology, combining his experience in operations, leadership, and problem-solving with the development of digital solutions.">
       Rafael é engenheiro mecânico em transição de carreira para a tecnologia, unindo sua experiência em operações, liderança e resolução de problemas ao desenvolvimento de soluções digitais.
     </p>
+    </div>
   </section>
 
   <section id="education" class="screen-section block">
-    <h2><span data-pt="formação acadêmica" data-en="education">formação acadêmica</span></h2>
+    <div class="section-box">
+    <h2><span data-pt="Formação acadêmica" data-en="Education">Formação acadêmica</span></h2>
     <ol class="timeline">
       <li class="timeline-item">
         <span class="timeline-date" data-pt="prev. 12/28" data-en="exp. 12/28">prev. 12/28</span>
@@ -91,11 +96,13 @@
         </div>
       </li>
     </ol>
+    </div>
   </section>
 
   <section id="experience" class="screen-section block">
+    <div class="section-box">
     <div class="section-header-row">
-      <h2><span data-pt="experiência profissional" data-en="work experience">experiência profissional</span></h2>
+      <h2><span data-pt="Experiência profissional" data-en="Work experience">Experiência profissional</span></h2>
       <div class="scroll-controls" aria-label="Navegação do conteúdo">
         <button type="button" class="scroll-btn" id="scrollUpBtn" aria-label="Rolar para cima">▲</button>
         <button type="button" class="scroll-btn" id="scrollDownBtn" aria-label="Rolar para baixo">▼</button>
@@ -114,7 +121,7 @@
               data-en="Provided customer support via WhatsApp and marketplaces (Mercado Livre, Shopee), clarifying technical questions and guiding customers on product use and maintenance.">Atendimento a clientes via WhatsApp e marketplaces (Mercado Livre, Shopee), esclarecendo dúvidas técnicas e orientando sobre uso e manutenção do produto.</li>
           <li data-pt="Diagnóstico de falhas técnicas em impressoras 3D por meio de testes e análise de sintomas relatados pelo cliente."
               data-en="Diagnosed technical failures in 3D printers through testing and analysis of symptoms reported by customers.">Diagnóstico de falhas técnicas em impressoras 3D por meio de testes e análise de sintomas relatados pelo cliente.</li>
-          <li data-pt="Registro e controle de solicitações de suporte técnico, documentando problema relatado, solução applieda e status do atendimento."
+          <li data-pt="Registro e controle de solicitações de suporte técnico, documentando problema relatado, solução aplicada e status do atendimento."
               data-en="Logged and tracked technical support requests, documenting the reported issue, applied solution, and service status.">Registro e controle de solicitações de suporte técnico, documentando problema relatado, solução aplicada e status do atendimento.</li>
           <li data-pt="Controle e teste de qualidade de matérias-primas utilizadas na produção."
               data-en="Controlled and tested the quality of raw materials used in production.">Controle e teste de qualidade de matérias-primas utilizadas na produção.</li>
@@ -145,16 +152,19 @@
         </ul>
       </article>
     </div>
+    </div>
   </section>
 
   <section id="projects" class="screen-section block">
-    <h2><span data-pt="projetos" data-en="projects">projetos</span></h2>
+    <div class="section-box">
+    <h2><span data-pt="Projetos" data-en="Projects">Projetos</span></h2>
     <div class="project-grid">
 
       <article class="project-card">
         <h3 data-pt="Detector de mensagens suspeitas" data-en="Suspicious Message Detector">Detector de mensagens suspeitas</h3>
         <p data-pt="Programa em Java que verifica mensagens suspeitas a partir de texto puro, .txt e .eml."
            data-en="A Java program that detects suspicious messages from plain text, .txt, and .eml files.">Programa em Java que verifica mensagens suspeitas a partir de texto puro, .txt e .eml.</p>
+        <div class="project-tags"><span>JAVA</span><span>TXT</span><span>EML</span></div>
         <span class="project-status" data-pt="repositório em breve" data-en="repository coming soon">repositório em breve</span>
       </article>
 
@@ -162,6 +172,7 @@
         <h3 data-pt="Portfólio web" data-en="Web Portfolio">Portfólio web</h3>
         <p data-pt="Este site — construído para praticar HTML e CSS do zero, sem frameworks."
            data-en="This site — built to practice HTML and CSS from scratch, no frameworks.">Este site — construído para praticar HTML e CSS do zero, sem frameworks.</p>
+        <div class="project-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
         <a class="project-link" href="https://github.com/rafael-scardoso" target="_blank" rel="noopener">github.com/rafael-scardoso</a>
       </article>
 
@@ -170,6 +181,7 @@
             data-en="Engineering capstone — operational efficiency in pumping systems with PID control">TCC de engenharia — eficiência operacional em sistemas de bombeamento com controle PID</h3>
         <p data-pt="Estudo sobre o uso de controle PID na automação do bombeamento de água tratada em Capão da Canoa."
            data-en="Study on the use of PID control in automating treated-water pumping in Capão da Canoa.">Estudo sobre o uso de controle PID na automação do bombeamento de água tratada em Capão da Canoa.</p>
+        <div class="project-tags"><span>PID</span><span>AUTOMAÇÃO</span></div>
         <span class="project-status" data-pt="repositório em breve" data-en="repository coming soon">repositório em breve</span>
       </article>
 
@@ -177,15 +189,17 @@
         <h3 data-pt="Impressão 3D — FDM" data-en="3D Printing — FDM">Impressão 3D — FDM</h3>
         <p data-pt="Prototipagem rápida em manufatura aditiva de polímeros termoplásticos, operada como MEI."
            data-en="Rapid prototyping through additive manufacturing of thermoplastic polymers, run as a registered microenterprise.">Prototipagem rápida em manufatura aditiva de polímeros termoplásticos, operada como MEI.</p>
+        <div class="project-tags"><span>FDM</span><span>MANUFATURA ADITIVA</span></div>
         <span class="project-status" data-pt="repositório em breve" data-en="repository coming soon">repositório em breve</span>
       </article>
 
     </div>
+    </div>
   </section>
 
   <section id="contact" class="screen-section block contact-section">
-    <div class="contact-content">
-      <h2><span data-pt="contato" data-en="contact">contato</span></h2>
+    <div class="contact-content section-box">
+      <h2><span data-pt="Contato" data-en="Contact">Contato</span></h2>
       <ul class="contact-list">
         <li>
           <a href="https://github.com/rafael-scardoso" target="_blank" rel="noopener">

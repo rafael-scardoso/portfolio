@@ -8,7 +8,7 @@
   --ink: #ECEAE2;
   --dim: #838B99;
   --line: #2A303C;
-  --circuit: #62E8C4;   /* software / current path */
+  --circuit: #d6ff00;;   /* software / current path */
   --iron: #FF7A45;      /* mechanical / origin path */
 
   --display: "Space Grotesk", sans-serif;
@@ -17,6 +17,10 @@
   --measure: 62ch;
   --radius: 3px;
   --header-height: 80px;
+
+  /* box background tints — alternated, 2 colors only */
+  --box-a: #182233; /* cool steel-blue, echoes --circuit */
+  --box-b: #2b2d42; /* warm bronze, echoes --iron */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -30,7 +34,11 @@ html {
 body {
   margin: 0;
   height: 100%;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 40px 40px;
   color: var(--ink);
   font-family: var(--display);
   font-size: 16px;
@@ -80,7 +88,17 @@ img, svg { display: block; }
   color: var(--dim);
   display: flex;
   align-items: center;
+  gap: 0.05rem;
   white-space: nowrap;
+}
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--circuit);
+  box-shadow: 0 0 6px var(--circuit);
+  flex-shrink: 0;
 }
 .prompt-user { color: var(--circuit); }
 .prompt-host { color: var(--iron); }
@@ -127,6 +145,7 @@ img, svg { display: block; }
   font-family: var(--mono);
   font-size: 0.8rem;
   padding: 0.75rem 0;
+  counter-reset: nav-index;
 }
 .site-nav a {
   text-decoration: none;
@@ -134,6 +153,13 @@ img, svg { display: block; }
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
 }
+.site-nav a:not(.nav-home) { counter-increment: nav-index; }
+.site-nav a.nav-home::before { content: "[~] "; color: var(--line); }
+.site-nav a:not(.nav-home)::before {
+  content: "[0" counter(nav-index) "] ";
+  color: var(--line);
+}
+.site-nav a:hover::before { color: var(--circuit); }
 .site-nav a:hover {
   color: var(--circuit);
   border-color: var(--circuit);
@@ -145,8 +171,10 @@ img, svg { display: block; }
 main {
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  counter-reset: section-index;
 }
 
 .screen-section {
@@ -162,17 +190,60 @@ main {
   margin: 0 auto;
 }
 
+/* the colored box: full width horizontally, but height fits only its own
+   content — not the section/page. The box-shadow bleeds the color out to
+   the viewport edges while the box element itself stays inline with the
+   centered 68rem content column (so text alignment is untouched). */
+.section-box {
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 2.5rem 1.25rem;
+}
+
+/* the color bleeds out to the viewport's right edge only — the left edge
+   stays put at the box's own position (aligned with the text column) */
+.section-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background-color: var(--box-color, transparent);
+  z-index: -1;
+}
+
+/* hero keeps the page's own background — no distinct box */
+#about .section-box   { --box-color: var(--box-a); }
+#education .section-box  { --box-color: var(--box-b); }
+#experience .section-box { --box-color: var(--box-a); }
+#projects .section-box   { --box-color: var(--box-b); }
+#contact .section-box    { --box-color: var(--box-a); }
+
 .block {
   border-top: none;
+  counter-increment: section-index;
 }
 
 .block h2 {
   font-family: var(--mono);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 2.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.block h2::before {
+  content: "0" counter(section-index) " //";
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--dim);
+  color: var(--circuit);
   letter-spacing: 0.02em;
-  margin-bottom: 1.5rem;
 }
 
 .section-header-row {
@@ -196,27 +267,47 @@ main {
   font-family: var(--mono);
   color: var(--circuit);
   font-size: clamp(0.85rem, 2vw, 1.05rem);
-  margin-top: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.9rem;
 }
+
+.hero-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--dim);
+}
+.hero-status .status-dot { background: var(--circuit); box-shadow: 0 0 6px var(--circuit); }
 
 .transition-bar {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 0.75rem;
-  margin-top: 2.5rem;
-  max-width: 34rem;
+  gap: 1rem;
+  margin-top: 3rem;
+  max-width: 42rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
 }
 
 .transition-label {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   color: var(--dim);
   white-space: nowrap;
 }
 
 .transition-track {
-  height: 6px;
+  position: relative;
+  height: 10px;
   background: var(--surface-2);
   border: 1px solid var(--line);
   border-radius: 3px;
@@ -228,8 +319,23 @@ main {
   width: 0%;
   background: linear-gradient(90deg, var(--iron), var(--circuit));
   transition: width 1.4s cubic-bezier(.22,.61,.36,1);
+  position: relative;
 }
-.transition-fill.is-filled { width: 72%; }
+.transition-fill.is-filled { width: 32%; }
+.transition-fill::after {
+  content: "32%";
+  position: absolute;
+  right: -2.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--circuit);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.6s ease 1.2s;
+}
+.transition-fill.is-filled::after { opacity: 1; }
 
 .transition-status {
   font-family: var(--mono);
@@ -347,6 +453,8 @@ main {
   overflow-y: auto;
   max-height: 60vh;
   padding-right: 0.5rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--line);
   scroll-behavior: smooth;
 
   /* Esconde a barra de rolagem em navegadores modernos */
@@ -360,6 +468,21 @@ main {
 }
 
 .job + .job { margin-top: 2.25rem; }
+
+.job {
+  position: relative;
+}
+.job::before {
+  content: "";
+  position: absolute;
+  left: -1.79rem;
+  top: 0.4rem;
+  width: 8px;
+  height: 8px;
+  background: var(--bg);
+  border: 1px solid var(--circuit);
+  border-radius: 50%;
+}
 
 .job-head {
   display: flex;
@@ -414,21 +537,46 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  counter-reset: project-index;
 }
 
 .project-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.35rem;
+  padding: 0;
   background: var(--surface);
   transition: border-color 0.2s ease;
+  counter-increment: project-index;
+  overflow: hidden;
 }
 .project-card:hover { border-color: var(--circuit); }
+
+.project-card::before {
+  content: "PROJECT // 0" counter(project-index);
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  color: var(--dim);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+  padding: 0.5rem 1rem;
+}
+
+.project-card > h3,
+.project-card > p,
+.project-card > .project-tags,
+.project-card > .project-status,
+.project-card > .project-link {
+  margin-left: 1.35rem;
+  margin-right: 1.35rem;
+}
 
 .project-card h3 {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.3;
+  margin-top: 1.1rem;
 }
 .project-card p {
   color: var(--dim);
@@ -436,10 +584,27 @@ main {
   margin-top: 0.6rem;
 }
 
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+}
+.project-tags span {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.03em;
+  color: var(--circuit);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.15rem 0.5rem;
+}
+
 .project-status,
 .project-link {
   display: inline-block;
   margin-top: 1rem;
+  margin-bottom: 1.1rem;
   font-family: var(--mono);
   font-size: 0.72rem;
 }
@@ -459,7 +624,8 @@ main {
 }
 
 .contact-content {
-  margin: auto 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .contact-list {
